@@ -1,0 +1,289 @@
+body {     margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ff69b4, #8a2be2, #6a0dad);
+    color: white;
+    overflow-x: hidden; 
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+.intro-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden; /* Keep intro-screen contained */
+}
+
+.intro-screen h1 {
+    font-size: 3rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.intro-screen button {
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    background: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.intro-screen button:hover {
+    background: #ff1493;
+    transform: scale(1.1);
+}
+
+.heart {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: #ff69b4;
+    transform: rotate(45deg);
+    animation: float 5s infinite ease-in-out;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: #ff69b4;
+    border-radius: 50%;
+    top: -25px;
+    left: 0;
+}
+
+.heart::after {
+    left: 25px;
+    top: 0;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(45deg);
+    }
+    50% {
+        transform: translateY(-30px) rotate(45deg);
+    }
+    100% {
+        transform: translateY(0) rotate(45deg);
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.main-content {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 20px;
+}
+
+.main-content.active {
+    display: flex;
+}
+
+.profile img {
+    width: 200px;
+    height: 220px;
+    border-radius: 50%;
+    border: 5px solid #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.profile img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+}
+
+.profile h2 {
+    margin-top: 20px;
+    font-size: 2.5rem;
+    color: #ffffff;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.content {
+    width: 90%;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    margin: 20px auto;
+}
+
+.content h3 {
+    color: #ff69b4;
+    margin-bottom: 15px;
+    font-size: 2rem;
+}
+
+.content p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: #f5f5f5;
+}
+
+
+.shayari {
+    margin: 20px;
+    text-align: left;
+}
+
+.shayari p {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: #f5f5f5;
+}
+
+.hidden {
+    display: none;
+}
+
+.toggle-btn {
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.toggle-btn:hover {
+    background: #ff1493;
+}
+
+
+footer {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+    font-size: 1.2rem;
+    color: #ff69b4;
+    display: none; /* Initially hide footer */
+}
+
+footer p {
+    margin: 0;
+}
+
+
+
+
+/* For devices with width less than 768px (tablets and mobile devices) */
+@media (max-width: 768px) {
+    .intro-screen h1 {
+        font-size: 2.5rem; /* Smaller font for heading */
+    }
+
+    .intro-screen button {
+        font-size: 1.2rem; /* Adjust button font size */
+        padding: 12px 24px; /* Adjust button size */
+    }
+
+    .profile img {
+        width: 150px;
+        height: 150px; /* Resize profile image for smaller screens */
+    }
+
+    .content {
+        width: 90%; /* Make content width responsive */
+        padding: 15px; /* Reduce padding for smaller screens */
+    }
+
+    .content h3 {
+        font-size: 1.8rem; /* Smaller font size for headings */
+    }
+
+    .content p {
+        font-size: 1rem; /* Adjust paragraph font size */
+    }
+
+    footer p {
+        font-size: 1rem; /* Smaller font for footer text */
+    }
+}
+
+/* For devices with width less than 480px (smaller screens like mobile) */
+@media (max-width: 480px) {
+    .intro-screen h1 {
+        font-size: 2rem; /* Smaller heading text */
+    }
+
+    .intro-screen button {
+        font-size: 1.1rem; /* Further adjust button size */
+        padding: 10px 20px; /* Adjust padding for mobile */
+    }
+
+    .profile img {
+        width: 120px;
+        height: 120px; /* Further reduce profile image size */
+    }
+
+    .content {
+        width: 95%; /* Increase content width */
+        padding: 10px; /* Reduce padding */
+    }
+
+    .content h3 {
+        font-size: 1.5rem; /* Adjust heading size */
+    }
+
+    .content p {
+        font-size: 0.9rem; /* Adjust paragraph text size */
+    }
+
+    footer p {
+        font-size: 0.9rem; /* Smaller font size for footer */
+    }
+}
+
+/* For devices with width between 480px and 768px (tablet portrait mode) */
+@media (min-width: 480px) and (max-width: 768px) {
+    .intro-screen h1 {
+        font-size: 2.2rem; /* Adjust heading size */
+    }
+
+    .intro-screen button {
+        font-size: 1.3rem;
+        padding: 12px 28px;
+    }
+
+    .profile img {
+        width: 170px;
+        height: 170px; /* Resize profile image */
+    }
+
+    .content h3 {
+        font-size: 1.7rem; /* Adjust heading font size */
+    }
+
+    .content p {
+        font-size: 1.1rem; /* Adjust paragraph font size */
+    }
+
+    footer p {
+        font-size: 1.1rem;
+    }
+}
+
+
+html {
+    scroll-behavior: smooth;
+}

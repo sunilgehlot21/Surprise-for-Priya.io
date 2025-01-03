@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise for Priya</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Add Google Fonts Link -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="intro-screen">
+        <h1>Welcome to Your Surprise, Priya!</h1>
+        <button onclick="startExperience()">Click to Begin</button>
+    </div>
+
+    <div class="main-content hidden">
+        <div class="profile">
+            <img src="choti.jpg" alt="Priya's Smiling Photo">
+            <h2>Priya</h2>
+        </div>
+
+        <div class="content">
+            <h3>A Special Message for Choti</h3>
+            <p>
+                "Priya, my dearest little sister,
+                You are the sunshine that brightens my world.
+                Your innocence, your laughter, and your presence make everything feel perfect.
+                You are not just my sister; you’re my best friend and my greatest blessing.
+                May your smile always shine as brightly as the stars, and your heart always stay full of joy. ❤️✨"
+            </p>
+        </div>
+
+        <div class="content">
+            <h3>कुछ प्यारी और मजेदार शायरी</h3>
+            <div id="shayariSection" class="shayari">
+                <!-- First Shayari shown initially -->
+                <p id="shayari1">1. मेरी चोटी बहन है सबसे प्यारी, <br>
+                    तेरी मुस्कान में बसी है सारी दुनिया हमारी। 😄✨<br>
+                    चाहे तस्वीरें हो या तुम्हारी बातें, <br>
+                    तुमसे मिलकर ही तो खुशी आती है। 📸💕</p>
+                
+                <!-- Additional Shayari hidden initially -->
+                <div id="extraShayari" class="hidden">
+                    <p>2. प्रिय, तेरी हंसी है जैसे मीठी सी धूप, <br>
+                        जो हर ग़म को पल में दूर कर देती है। ☀️😄<br>
+                        तुम हो मेरे दिल की धड़कन, <br>
+                        तुमसे बात किए बिना तो दिन ही अधूरा लगता है। 💖</p>
+        
+                    <p>3. छोटी सी प्यारी बहन, मस्त और शरारती, <br>
+                        तेरी बातें दिल को बहलाती हैं, नयी-नयी। 🥳💫<br>
+                        फोटो क्लिक करना है तेरा शौक, <br>
+                        लेकिन तुम्हारी हंसी तो है सबसे खोक! 😆📷</p>
+        
+                    <p>4. प्रिय तुम हो वो खुशबू, जो हमेशा पास रहे, <br>
+                        तेरी हंसी में ही सारी दुनिया बसी रहे। 🌸😊<br>
+                        ऑनलाइन हो या ऑफलाइन हो तुम, <br>
+                        तुमसे हर बात अब याद रहती है सब दिन! 💬💖</p>
+        
+                    <p>5. मेरी प्यारी बहन प्रिय, तुम हो सबसे प्यारी, <br>
+                        तेरी मुस्कान में बसी है ज़िंदगी हमारी। 🥰✨<br>
+                        फोटो हो या बातें हों, तुम हमेशा हो साथ, <br>
+                        तुमसे ही तो महकते हैं मेरे सारे रास्ते। 🚶‍♀️💕</p>
+                </div>
+            </div>
+            <button id="toggleBtn" class="toggle-btn" onclick="toggleShayari()">Show More</button>
+        </div>
+        
+    </div>
+
+    <footer id="footer">
+        <p>Made with ❤️ for Priya - The Best Sister Ever</p>
+    </footer>
+
+    <script>
+        function startExperience() {
+            document.querySelector('.intro-screen').classList.add('hidden');
+            document.querySelector('.main-content').classList.add('active');
+            document.querySelector('#footer').style.display = 'block'; // Show footer when button is clicked
+
+            document.body.style.overflowY = 'auto'; // Enable vertical scrolling
+
+            for (let i = 0; i < 30; i++) {
+                createHeart();
+            }
+        }
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.style.left = Math.random() * window.innerWidth + 'px';
+            heart.style.top = Math.random() * window.innerHeight + 'px';
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        function toggleShayari() {
+            const extraShayari = document.getElementById('extraShayari');
+            const toggleBtn = document.getElementById('toggleBtn');
+        
+            if (extraShayari.classList.contains('hidden')) {
+                extraShayari.classList.remove('hidden');
+                toggleBtn.textContent = 'Show Less'; // Change button text to 'Show Less'
+            } else {
+                extraShayari.classList.add('hidden');
+                toggleBtn.textContent = 'Show More'; // Change button text to 'Show More'
+            }
+        }
+        
+        
+    </script>
+</body>
+
+</html>
